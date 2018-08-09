@@ -1,0 +1,33 @@
+vi:
+  layouts:
+    header:
+      home: "Trang chủ"
+      brand: "Nhà hàng"
+      contact: "Liên hệ"
+      about: "Giới thiệu"
+      menu: "Menu"
+      reservation: "Đặt bàn"
+      login: "Đăng nhập"
+    footer:
+      home: "Trang chủ"
+      brand: "Nhà hàng"
+      contact: "Liên hệ"
+      about: "Giới thiệu"
+      menu: "Menu"
+      mapsite: "Vị trí"
+
+  static_pages:
+    top_order:
+      top_order: "Top Order"
+      view_menu: "Xem menu"
+    about:
+      about: "Giới thiệu"
+
+  users:
+    new:
+      heading: "Đăng ký"
+
+  sessions:
+    new:
+      message: "Người dùng mới? "
+      heading: "Đăng nhập"
