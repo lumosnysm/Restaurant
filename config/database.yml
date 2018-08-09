@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: <%= Figaro.env.password %>
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: <%= Figaro.env.database %>
+
+test:
+  <<: *default
+  database: <%= Figaro.env.database %>
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: restaurant_pro
+  pool: 5
+  timeout: 5000
