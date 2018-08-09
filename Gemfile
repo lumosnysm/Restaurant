@@ -14,6 +14,8 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "config"
 gem "figaro"
+gem "bootstrap", "~> 4.1.3"
+gem "jquery-rails"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"
