@@ -1,0 +1,31 @@
+<div class="container text-white">
+  <div class="row p-5">
+    <div class="col-md-12 border rounded p-5 shadow">
+      <%= form_for @dish do |f| %>
+        <div class="form-row">
+          <div class="col form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <div class="col form-group">
+            <%= f.label :price %>
+            <%= f.number_field :price, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "form-control"%>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col form-group">
+            <%= f.label :category_id %>
+            <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+          </div>
+        </div>
+        <%= f.submit t(".submit"), class: "btn btn-outline-light btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>

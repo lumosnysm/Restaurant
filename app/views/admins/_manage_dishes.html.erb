@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-8">
+    <%= render "shared/dishes_form" %>
+  </div>
+  <div class="col-sm-4">
+    <div class="container show-list text-light my-2 border rounded shadow">
+      <ul>
+        <% @dishes.each do |dish| %>
+          <li>
+            <%= dish.name %>
+            | <%= number_to_currency(dish.price, unit: "VND ") %>
+            <%= link_to "delete", dish, method: :delete,
+            data: {confirm: t(".confirm")} %>
+            <%= render "modal_dish", dish: dish %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
