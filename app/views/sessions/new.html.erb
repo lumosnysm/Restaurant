@@ -1,0 +1,22 @@
+<div class="container p-5">
+  <h1 class="text-center"><%= t ".heading" %></h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 bg-white border p-5 shadow">
+      <form>
+        <div class="form-group">
+          <label for="">Name </label>
+          <input type="email" class="form-control rounded-0">
+        </div>
+        <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control rounded-0">
+        </div>
+        <button type="submit" class="btn btn-outline-danger rounded-0 btn-block">Create Account</button>
+      </form>
+      <p>
+        <%= t ".message" %>
+        <%= link_to t(".signup"), signup_path %>
+      </p>
+    </div>
+  </div>
+</div>
