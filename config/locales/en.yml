@@ -1,6 +1,9 @@
 en:
   layouts:
     header:
+      account: "Account"
+      info: "Profile"
+      setting: "Setting"
       home: "Home"
       brand: "Restaurant"
       contact: "Contact"
@@ -8,6 +11,7 @@ en:
       menu: "Menu"
       reservation: "Reservation"
       login: "Login"
+      logout: "Logout"
     footer:
       home: "Home"
       brand: "Restaurant"
@@ -15,8 +19,12 @@ en:
       about: "About Us"
       menu: "Menu"
       mapsite: "Mapsite"
+    application:
+      title_base: "Restaurant"
 
   static_pages:
+    home:
+      title: "Home"
     top_order:
       top_order: "Top Order"
       view_menu: "View the menu"
@@ -24,10 +32,33 @@ en:
       about: "About Us"
 
   users:
+    create:
+      welcome: "Welcome to the App!"
+      message_danger: "Fail to create new user"
     new:
       heading: "Sign Up"
+      title: "Sign Up"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      create_account: "Create account"
+
+  shared:
+    error_messages:
+      message : "The form contain "
+      error: " error"
 
   sessions:
+    create:
+      message_danger: "Invalid email/password combination"
     new:
+      new_user: "New user? "
       message: "New user? "
       heading: "Log In"
+      title: "Log In"
+      login: "Login"
+      sign_up: "Sign up"
+      email: "Email"
+      password: "Password"
