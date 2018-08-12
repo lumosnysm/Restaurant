@@ -24,10 +24,22 @@ en:
       about: "About Us"
 
   users:
+    create:
+      wellcome: "Welcome to the App!"
     new:
       heading: "Sign Up"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      create_account: "Create account"
+  shared:
+    error_messages:
+      message : "The form contain "
 
   sessions:
     new:
       message: "New user? "
       heading: "Log In"
+      login: "Login"
