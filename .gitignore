@@ -6,6 +6,10 @@
 
 # Ignore bundler config.
 /.bundle
+/.idea
+/test*
+/.idea/*
+/public/uploads
 
 # Ignore all logfiles and tempfiles.
 /log/*
