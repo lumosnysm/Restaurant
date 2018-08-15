@@ -1,29 +1,29 @@
-<div class="mt-5">
+<div class="container-fluid mt-5 p-5">
   <div class="row">
     <div class="col-sm-5">
-      <div class="jumbotron bg-light">
+      <div class="jumbotron bg-dark border text-white shadow">
         <h2 class="font-weight-bold">Reservation</h2>
-        <hr class="my-4 bg-light">
+        <hr class="my-4 bg-white">
         <form>
           <div class="form-row form-group">
             <div class="col">
-              <input type="date" class="form-control rounded-0">
+              <input type="date" class="form-control">
             </div>
             <div class="col">
-              <input type="time" class="form-control rounded-0">
+              <input type="time" class="form-control">
             </div>
           </div>
           <div class="form-row form-group">
             <div class="col">
-              <input type="text" class="form-control rounded-0" placeholder="Your message">
+              <input type="text" class="form-control" placeholder="Your message">
             </div>
           </div>
-          <button type="button" class="btn btn-outline-danger rounded-0">Reservation</button>
+          <button type="button" class="btn btn-outline-light">Reservation</button>
         </form>
       </div>
     </div>
     <div class="col-sm-7">
-      <%= image_tag("bg-3.jpg", alt: "...", class: "w-100") %>
+      <%= image_tag("bg-3.jpg", alt: "...", class: "w-100 shadow-lg") %>
     </div>
   </div>
 </div>

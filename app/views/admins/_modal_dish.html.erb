@@ -1,0 +1,39 @@
+<%= link_to "edit", "#", data: {toggle: "modal", target: "#modal-#{dish.id}"} %>
+<div class="modal fade" id="modal-<%= dish.id %>" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for dish do |f| %>
+          <div class="form-row">
+            <div class="col form-group">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control rounded-0" %>
+            </div>
+            <div class="col form-group">
+              <%= f.label :price %>
+              <%= f.number_field :price, class: "form-control rounded-0" %>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <%= f.label :description %>
+              <%= f.text_area :description, class: "form-control rounded-0"%>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col form-group">
+              <%= f.label :category_id %>
+              <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: true %>
+            </div>
+          </div>
+          <%= f.submit t(".submit"), class: "btn btn-outline-primary btn-block rounded-0" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
