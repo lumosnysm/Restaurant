@@ -1,14 +1,10 @@
-<!-- ****** Welcome Area Start ****** -->
 <section class="caviar-hero-area" id="home">
-  <!-- Welcome Social Info -->
   <div class="welcome-social-info">
     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
     <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
   </div>
-  <!-- Welcome Slides -->
   <div class="caviar-hero-slides owl-carousel">
-    <!-- Single Slides -->
     <div class="single-hero-slides bg-img"
      style="background-image: url(<%= asset_path('hero-1.jpg') %>);">
       <div class="container h-100">
@@ -27,11 +23,9 @@
           </div>
         </div>
       </div>
-      <!-- Slider Nav -->
       <div class="hero-slides-nav bg-img"
        style="background-image: url(<%= asset_path('hero-2.jpg') %>);"></div>
     </div>
-    <!-- Single Slides -->
     <div class="single-hero-slides bg-img"
      style="background-image: url(<%= asset_path('hero-2.jpg') %>);">
       <div class="container h-100">
@@ -50,18 +44,13 @@
           </div>
         </div>
       </div>
-      <!-- Slider Nav -->
       <div class="hero-slides-nav bg-img"
        style="background-image: url(<%= asset_path('hero-1.jpg') %>);"></div>
     </div>
   </div>
 </section>
-<!-- ****** Welcome Area End ****** -->
-
-<!-- ****** About Us Area Start ****** -->
 <section class="caviar-about-us-area section-padding-150" id="about">
   <div class="container">
-    <!-- About Us Single Area -->
     <div class="row align-items-center">
       <div class="col-12 col-md-6">
         <div class="about-us-thumbnail wow fadeInUp" data-wow-delay="0.5s">
@@ -83,7 +72,6 @@
         </div>
       </div>
     </div>
-    <!-- About Us Single Area -->
     <div class="about-us-second-part">
       <div class="row align-items-center pt-200">
         <div class="col-12 col-md-6 col-lg-5">
@@ -104,9 +92,6 @@
     </div>
   </div>
 </section>
-<!-- ****** About Us Area End ****** -->
-
-<!-- ****** Dish Menu Area Start ****** -->
 <section class="caviar-dish-menu" id="menu">
   <div class="container">
     <div class="row">
@@ -114,7 +99,6 @@
         <div class="section-heading text-center">
           <h2><%= t ".top_order" %></h2>
         </div>
-        <!-- btn -->
         <a href="menu.html" class="btn caviar-btn"><span></span><%= t ".view_menu" %></a>
       </div>
     </div>
@@ -155,9 +139,6 @@
     </div>
   </div>
 </section>
-<!-- ****** Dish Menu Area End ****** -->
-
-<!-- ****** Awards Area Start ****** -->
 <section class="caviar-awards-area" id="awards">
   <div class="container">
     <div class="row align-items-center">
@@ -178,9 +159,6 @@
     </div>
   </div>
 </section>
-<!-- ****** Awards Area End ****** -->
-
-<!-- ****** Testimonials Area Start ****** -->
 <section class="caviar-testimonials-area" id="testimonial">
   <div class="container">
     <div class="row">
@@ -190,48 +168,24 @@
             <h2><%= t ".reviews" %></h2>
           </div>
           <div class="caviar-testimonials-slides owl-carousel">
-            <!-- Single Testimonial Area -->
-            <div class="single-testimonial">
-              <div class="testimonial-thumb-name d-flex align-items-center">
-                <%= image_tag("3.jpg", alt: "") %>
-                <div class="tes-name">
-                  <h5>Robert Jonson</h5>
-                  <p>lorem ipsum</p>
+            <% @reviews.each do |review| %>
+              <div class="single-testimonial">
+                <div class="testimonial-thumb-name d-flex align-items-center">
+                  <%= image_tag("3.jpg", alt: "") %>
+                  <div class="tes-name">
+                    <h5><%= review.user.name %></h5>
+                    <p>lorem ipsum</p>
+                  </div>
                 </div>
+                <p><%= review.content %></p>
               </div>
-              <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor. Integer molestie rhoncus nisi a euismod.</p>
-            </div>
-            <!-- Single Testimonial Area -->
-            <div class="single-testimonial">
-              <div class="testimonial-thumb-name d-flex align-items-center">
-                <%= image_tag("2.jpg", alt: "") %>
-                <div class="tes-name">
-                  <h5>Clara Hudson</h5>
-                  <p>lorem ipsum</p>
-                </div>
-              </div>
-              <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor. Integer molestie rhoncus nisi a euismod.</p>
-            </div>
-            <!-- Single Testimonial Area -->
-            <div class="single-testimonial">
-              <div class="testimonial-thumb-name d-flex align-items-center">
-                <%= image_tag("1.jpg", alt: "") %>
-                <div class="tes-name">
-                  <h5>Jane Black</h5>
-                  <p>lorem ipsum</p>
-                </div>
-              </div>
-              <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor. Integer molestie rhoncus nisi a euismod.</p>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- ****** Testimonials Area End ****** -->
-
-<!-- ****** Reservation Area Start ****** -->
 <section class="caviar-reservation-area d-md-flex align-items-center" id="reservation">
   <div class="reservation-form-area d-flex justify-content-end">
     <div class="reservation-form">
@@ -266,4 +220,3 @@
     <%= image_tag("hero-3.jpg", alt: "") %>
   </div>
 </section>
-<!-- ****** Reservation Area End ****** -->

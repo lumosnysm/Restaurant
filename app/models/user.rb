@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :reviews
   before_save {email.downcase!}
   validates :name,  presence: true, length: {maximum: Settings.name_max_length}
   validates :email, presence: true, length: {maximum: Settings.email_max_length},

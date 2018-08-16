@@ -78,3 +78,12 @@ en:
       be_ordered: "Be ordered"
       comments: "Comments"
       submit: "Leave a message"
+  reviews:
+    create:
+      message_success: "Review saved"
+      message_danger: "Review not save"
+    new:
+      review_placeholder: "Review our restaurant"
+      send: "Send"
+      user_review: "User rivew"
+      leave_a_review: "Leave a review"
