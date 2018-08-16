@@ -5,3 +5,4 @@ pass_min_length: 6
 money_symbol: "$"
 review_rows: 10
 review_limit: 3
+image_sm: 50

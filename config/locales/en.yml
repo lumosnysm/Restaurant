@@ -45,7 +45,20 @@ en:
       email: "Email"
       password: "Password"
       password_confirmation: "Password confirmation"
-      create_account: "Create account"
+      submit: "Submit"
+    edit:
+      title: "Update user"
+    update:
+      message_success: "Update successfuly"
+      message_danger: "Can not update"
+    load_user:
+      message_danger: "User not exist"
+    correct_user:
+      message_danger: "not user"
+    show:
+      ago: " ago"
+      created: "Created "
+      updated: "Updated "
 
   shared:
     error_messages:

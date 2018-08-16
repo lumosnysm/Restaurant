@@ -1,0 +1,32 @@
+<% provide :title, @user.name %>
+<div class="breadcumb-area bg-img bg-overlay hero4">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2>
+            <%= @user.name %>
+            <% if @user.image? %>
+              <%= image_tag @user.image.url, class: "avatar" %>
+            <% end %>
+          </h2>
+          <p>
+            <%= t ".created" %>
+            <%= time_ago_in_words @user.created_at %>
+            <%= t ".ago" %>
+          </p>
+          <p>
+            <%= t ".updated" %>
+            <%= time_ago_in_words @user.updated_at %>
+            <%= t ".ago" %>
+          </p>
+          <p>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <%= @user.email %>
+          </p>
+        </div>
+        <%= link_to "update", edit_user_path, class: "btn caviar-btn" %>
+      </div>
+    </div>
+  </div>
+</div>

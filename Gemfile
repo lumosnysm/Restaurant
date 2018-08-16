@@ -20,6 +20,8 @@ gem "font-awesome-rails"
 gem "bcrypt"
 gem "ffaker"
 gem "stroke-seven-rails"
+gem "carrierwave"
+gem "mini_magick"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"
