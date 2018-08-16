@@ -36,18 +36,14 @@
               <li class="nav-item active">
                 <%= link_to t(".home"), root_path, class: "nav-link" %>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <%= link_to t(".home"), root_path, class: "dropdown-item" %>
-                  <%= link_to t(".contact"), contact_path, class: "dropdown-item" %>
-                </div>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to t(".categories"), categories_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#awards">Awards</a>
