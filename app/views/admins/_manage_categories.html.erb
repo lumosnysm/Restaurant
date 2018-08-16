@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-8">
+    <%= render "shared/categories_form" %>
+  </div>
+  <div class="col-sm-4">
+    <div class="container show-list text-light my-2 border rounded">
+      <ul>
+        <% @categories.each do |category| %>
+          <li>
+            <%= category.name %>
+            <%= link_to "delete", category, method: :delete,
+            data: {confirm: t(".confirm")} %>
+            <%= render "modal_category", category: category %>
+            <ul>
+              <% category.dishes.each do |dish| %>
+                <li>
+                  <%= dish.name %>
+                </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

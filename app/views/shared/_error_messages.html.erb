@@ -3,11 +3,11 @@
     <div class="alert alert-danger">
       <%= t ".message" %>
       <%= pluralize(object.errors.count, t(".error")) %>.
+      <ul>
+        <% object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
-    <ul>
-      <% object.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
   </div>
 <% end %>

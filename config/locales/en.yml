@@ -12,6 +12,7 @@ en:
       reservation: "Reservation"
       login: "Login"
       logout: "Logout"
+      admin: "Admin"
     footer:
       home: "Home"
       brand: "Restaurant"
@@ -30,6 +31,8 @@ en:
       view_menu: "View the menu"
     about:
       about: "About Us"
+    review:
+      review: "Reviews"
 
   users:
     create:
@@ -49,6 +52,10 @@ en:
     error_messages:
       message : "The form contain "
       error: " error"
+    categories_form:
+      submit: "Create category"
+    dishes_form:
+      submit: "Create dish"
 
   sessions:
     create:
@@ -62,3 +69,20 @@ en:
       sign_up: "Sign up"
       email: "Email"
       password: "Password"
+
+  admins:
+    home:
+      categories: "Manage categories"
+      dishes: "Manage dishes"
+      menus: "Manage menus"
+      title: "Admin"
+      login_message: "Please login"
+      not_admin: "You are not admin"
+    manage_categories:
+      confirm: "You sure?"
+    manage_dishes:
+      confirm: "You sure?"
+    modal_category:
+      submit: "Update"
+    modal_dish:
+      submit: "Update"
