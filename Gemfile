@@ -18,6 +18,8 @@ gem "bootstrap", "~> 4.1.3"
 gem "jquery-rails"
 gem "font-awesome-rails"
 gem "bcrypt"
+gem "ffaker"
+gem "stroke-seven-rails"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"

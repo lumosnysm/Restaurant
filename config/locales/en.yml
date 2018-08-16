@@ -12,24 +12,24 @@ en:
       reservation: "Reservation"
       login: "Login"
       logout: "Logout"
+      review: "Review"
+      modal_title: "Review our Restaurant"
     footer:
-      home: "Home"
       brand: "Restaurant"
-      contact: "Contact"
-      about: "About Us"
-      menu: "Menu"
-      mapsite: "Mapsite"
     application:
       title_base: "Restaurant"
 
   static_pages:
     home:
       title: "Home"
-    top_order:
+      reservation: "Reservation"
       top_order: "Top Order"
       view_menu: "View the menu"
-    about:
-      about: "About Us"
+      order: "Order"
+      awards: "Awards"
+    contact:
+      get_in_touch: "Get in touch"
+      send: "Send message"
 
   users:
     create:
@@ -62,3 +62,18 @@ en:
       sign_up: "Sign up"
       email: "Email"
       password: "Password"
+
+  menus:
+    show:
+      top_order: "Top order"
+
+  dishes:
+    show:
+      not_found: "Dish not found"
+      order: "Order"
+      description: "Description"
+      dish_name: "Dish name"
+      price: "Dish price"
+      be_ordered: "Be ordered"
+      comments: "Comments"
+      submit: "Leave a message"
