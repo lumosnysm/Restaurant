@@ -83,6 +83,16 @@ en:
       top_order: "Top order"
 
   dishes:
+    dish:
+      confirm: "Confirm"
+    create:
+      message_success: "Dish saved"
+      message_danger: "Can not save"
+    destroy:
+      message_success: "Dish deleted"
+      message_danger: "Can not delete"
+    load_dish:
+      message_danger: "Dish not exist"
     show:
       not_found: "Dish not found"
       order: "Order"
@@ -116,6 +126,8 @@ en:
       modal_edit: "Update category"
       modal_add: "Add dish"
       add: "Add dish"
+      create_dish: "Create a dish"
+      placeholder_description: "Input description"
     create:
       message_success: "Category saved"
       message_danger: "Category not save"
