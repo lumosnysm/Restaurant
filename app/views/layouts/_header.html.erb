@@ -72,6 +72,9 @@
                  role="button" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false"><%= t ".account" %></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <% if current_user.admin? %>
+                    <%= link_to t(".admin"), "#", class: "dropdown-item" %>
+                  <% end %>
                   <%= link_to t(".info"), "#", class: "dropdown-item" %>
                   <%= link_to t(".setting"), "#", class: "dropdown-item" %>
                   <%= link_to t(".review"), "#", class: "dropdown-item",
