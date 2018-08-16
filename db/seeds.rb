@@ -1,10 +1,10 @@
 5.times do |n|
-  name = FFaker::Lorem.sentence 2
+  name = FFaker::Lorem.sentence 1
   description = FFaker::Lorem.sentence 50
   price = rand(20..100)
-  Dish.create!(name: name,
+  Dish.create! name: name,
     price: price,
-    description: description)
+    description: description
 end
 
 User.create! name: "Admin",
@@ -12,3 +12,8 @@ User.create! name: "Admin",
   password: "111111",
   password_confirmation: "111111",
   admin: true
+
+50.times do |n|
+  name = FFaker::Lorem.word
+  Category.create! name: name
+end
