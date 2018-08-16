@@ -1,0 +1,35 @@
+<div class="breadcumb-area bg-img bg-overlay"
+    style="background-image: url(<%= asset_path('hero-4.jpg') %>)">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2><%= t ".user_review" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="caviar-reservation-area d-md-flex align-items-center" id="reservation">
+  <div class="reservation-form-area d-flex justify-content-end">
+    <div class="reservation-form">
+      <div class="section-heading">
+        <h2><%= t ".leave_a_review" %></h2>
+      </div>
+      <%= form_for @review do |f| %>
+        <div class="row">
+          <div class="col-12">
+            <hr class="br-dark">
+            <%= f.text_area :content, class: "form-control", rows: Settings.review_rows, placeholder: t(".review_placeholder")  %>
+          </div>
+          <div class="col-12">
+            <%= f.submit t(".send"), class: "btn caviar-btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="reservation-side-thumb wow fadeInRightBig" data-wow-delay="0.5s">
+    <%= image_tag("hero-5.jpg", alt: "") %>
+  </div>
+</section>
