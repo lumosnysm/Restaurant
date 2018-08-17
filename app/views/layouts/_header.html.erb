@@ -1,57 +1,121 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top">
+<!-- Preloader -->
+<div id="preloader">
+  <div class="caviar-load"></div>
+  <div class="preload-icons">
+    <%= image_tag("preload-1.png", alt: "", class: "preload-1") %>
+    <%= image_tag("preload-2.png", alt: "", class: "preload-2") %>
+    <%= image_tag("preload-3.png", alt: "", class: "preload-3") %>
+  </div>
+</div>
+
+<!-- ***** Search Form Area ***** -->
+<div class="caviar-search-form d-flex align-items-center">
   <div class="container">
-    <%= link_to t(".brand"), root_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
-        aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <%= link_to t(".home"), root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Pages
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to t(".home"), root_path, class: "dropdown-item" %>
-            <%= link_to t(".menu"), "#", class: "dropdown-item" %>
-            <%= link_to t(".contact"), "#", class: "dropdown-item" %>
-          </div>
-        </li>
-        <li class="nav-item active">
-          <%= link_to t(".about"), about_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to t(".menu"), "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to t(".reservation"), "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to t(".contact"), "#", class: "nav-link" %>
-        </li>
-        <% if logged_in? %>
-          <li class="nav-item active dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
-               role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%=  t ".account" %>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <%= link_to t(".info"), "#", class: "dropdown-item" %>
-              <%= link_to t(".setting"), "#", class: "dropdown-item" %>
-              <%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to t(".login"), login_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="row">
+      <div class="col-12">
+        <div class="search-close-btn" id="closeBtn">
+          <i class="pe-7s-close-circle" aria-hidden="true"></i>
+        </div>
+        <form action="#" method="get">
+          <input type="search" name="caviarSearch" id="search">
+          <input type="submit" class="d-none" value="submit">
+        </form>
+      </div>
     </div>
   </div>
-</nav>
+</div>
+
+<!-- ***** Header Area Start ***** -->
+<header class="header_area" id="header">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-12 h-100">
+        <nav class="h-100 navbar navbar-expand-lg align-items-center">
+          <%= link_to t(".brand"), root_path, class: "navbar-brand" %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+           data-target="#caviarNav" aria-controls="caviarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span></button>
+          <div class="collapse navbar-collapse" id="caviarNav">
+            <ul class="navbar-nav ml-auto" id="caviarMenu">
+              <li class="nav-item active">
+                <%= link_to t(".home"), root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to t(".home"), root_path, class: "dropdown-item" %>
+                  <%= link_to t(".contact"), contact_path, class: "dropdown-item" %>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#awards">Awards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonial">Reviews</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reservation">Reservation</a>
+              </li>
+              <li class="nav-item">
+                <%= link_to t(".contact"), contact_path, class: "nav-link" %>
+              </li>
+              <% if logged_in? %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                 role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false"><%= t ".account" %></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to t(".info"), "#", class: "dropdown-item" %>
+                  <%= link_to t(".setting"), "#", class: "dropdown-item" %>
+                  <%= link_to t(".review"), "#", class: "dropdown-item",
+                   data: {toggle: "modal", target: "#modal-review"} %>
+                  <%= link_to t(".logout"), logout_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to t(".login"), login_path, class: "nav-link" %>
+                </li>
+              <% end %>
+            </ul>
+            <!-- Search Btn -->
+            <div class="caviar-search-btn">
+              <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<!-- ***** Modal Area Begin ***** -->
+<div class="modal fade" id="modal-review" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t ".modal_title" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" rows="3" placeholder="Review our restaurant"></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline-primary rounded-0">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ***** Modal Area Begin ***** -->

@@ -1,0 +1,121 @@
+<!-- ***** Breadcumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-overlay"
+   style="background-image: url(<%= asset_path('hero-2.jpg') %>)">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <div class="breadcumb-content">
+            <h2 style="overflow-wrap:break-word;"><%= @dish.name %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcumb Area End ***** -->
+
+  <!-- ***** Dish Area Start ***** -->
+  <div class="caviar-food-menu section-padding-100 clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-1">
+          <div class="food-menu-title">
+            <h2><%= @dish.name %></h2>
+          </div>
+        </div>
+        <div class="col-11">
+          <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-8">
+                <h6><%= t ".dish_name" %></h6>
+                <p class="font-italic"><%= @dish.name %></p>
+                <h6><%= t ".description" %></h6>
+                <p class="font-italic"><%= @dish.description %></p>
+                <h6><%= t ".price" %></h6>
+                <p class="font-italic">$<%= @dish.price %></p>
+                <h6><%= t ".be_ordered" %></h6>
+                <p class="font-italic">100 times</p>
+              </div>
+              <div class="col-4">
+                <%= image_tag("dish-1.png", alt: "") %>
+                <div class="dish-info">
+                  <h6 class="dish-name"><%= @dish.name %></h6>
+                  <p class="dish-price">$45</p>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="btn caviar-btn"><span></span>
+              <%= t ".order" %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Dish Area End ***** -->
+
+  <!-- ***** Comment Area Begin ***** -->
+  <div class="caviar-food-menu section-padding-10 clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-1">
+          <div class="food-menu-title">
+            <h2><%= t ".comments" %></h2>
+          </div>
+        </div>
+        <div class="col-11">
+          <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
+            <div class="row">
+              <div class="col-8">
+                <div class="reservation-form">
+                  <div class="section-heading">
+                  </div>
+                  <!-- ***** Form Area Begin ***** -->
+                  <form>
+                    <div class="row">
+                      <div class="col-12">
+                        <textarea class="form-control" placeholder="Type your comment here..."></textarea>
+                        <hr class="bg-dark">
+                        <button class="btn btn-outline-dark rounded-0"
+                          type="submit">
+                          <%= t ".submit" %></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- ***** Form Area End ***** -->
+                </div>
+                <br>
+                <h6>User 1</h6>
+                <p class="font-italic">
+                  esse iusto nisi consequatur sapiente a vel
+                  saepe aspernatur sed impedit et aut est autem
+                  laborum enim ex et occaecati repellendus voluptatem
+                  distinctio rerum
+                </p>
+                <h6>User 2</h6>
+                <p class="font-italic">
+                  esse iusto nisi consequatur sapiente a vel
+                  saepe aspernatur sed impedit et aut est autem
+                  laborum enim ex et occaecati repellendus voluptatem
+                  distinctio rerum
+                </p>
+                <h6>User 3</h6>
+                <p class="font-italic">
+                  esse iusto nisi consequatur sapiente a vel
+                  saepe aspernatur sed impedit et aut est autem
+                  laborum enim ex et occaecati repellendus voluptatem
+                  distinctio rerum
+                </p>
+              </div>
+              <div class="col-4">
+                <%= image_tag("dish-1.png", alt: "") %>
+                <div class="dish-info">
+                  <h6 class="dish-name"><%= t ".comments" %></h6>
+                  <p class="dish-price">3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Comment Area End ***** -->
