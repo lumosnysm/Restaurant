@@ -3,3 +3,5 @@ name_max_length: 50
 email_max_length: 255
 pass_min_length: 6
 money_symbol: "$"
+review_rows: 10
+review_limit: 3
