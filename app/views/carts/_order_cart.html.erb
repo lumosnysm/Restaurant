@@ -1,0 +1,5 @@
+<div class="clearfix">
+  <% @order_items.each do |order_item| %>
+    <%= render "carts/cart_row", dish: order_item.dish, order_item: order_item %>
+  <% end %>
+</div>

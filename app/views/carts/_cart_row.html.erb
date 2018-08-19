@@ -1,0 +1,22 @@
+<%= form_for order_item, remote: true do |f| %>
+<div class="single_menu_item <%= dish.category.name %> wow fadeInUp">
+  <div class="d-sm-flex align-items-center">
+    <div class="dish-thumb">
+      <%= image_tag("dish-1.png", alt: "") %>
+    </div>
+    <div class="dish-description">
+      <h3><%= link_to dish.name, dish, class: "text-dark" %></h3>
+      <p><%= truncate dish.description, length: Settings.truncate_length %></p>
+      <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control w-10", min: 1 %>
+      <%= f.hidden_field :product_id, value: dish.id %>
+    </div>
+    <div class="dish-value">
+      <h3>
+      <%= "#{Settings.money_symbol}#{dish.price}" %>
+      </h3>
+      <%= f.submit "Update Quantity", class: "btn caviar-btn" %>
+      <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{dish.name}' from your cart?" }, method: :delete, remote: true } %>
+    </div>
+  </div>
+</div>
+<% end %>

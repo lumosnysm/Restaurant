@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/cart", to: "carts#show"
   resources :reviews
   resources :users
   resources :menus
   resources :dishes
   resources :categories
   resources :menudetails
+  resources :order_items
 end

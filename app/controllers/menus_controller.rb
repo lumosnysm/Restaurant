@@ -11,6 +11,7 @@ class MenusController < ApplicationController
     @menudetail = @menu.picks.build
     @categories = @menu.categories.distinct
     @dishes = @menu.dishes.distinct
+    @order_item = current_order.order_items.new
   end
 
   def create
