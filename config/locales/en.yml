@@ -16,6 +16,7 @@ en:
       modal_title: "Review our Restaurant"
       admin: "Admin"
       categories: "Categories"
+      menus: "Menus"
     footer:
       brand: "Restaurant"
     application:
@@ -68,6 +69,32 @@ en:
   menus:
     show:
       top_order: "Top order"
+      edit: "Edit"
+      submit: "Update"
+      modal_edit: "Update menu"
+      add: "add+"
+      modal_add: "Add dish"
+      order: "Order"
+      delete: "Delete"
+      confirm: "You sure ?"
+      select_dish: "Choose a dish"
+      select_category: "Choose a category"
+    index:
+      menus: "Menus"
+      add: "Add menus"
+      submit: "Submit"
+      number_dishes: "Dishes in this menu: "
+    create:
+      message_success: "Menu saved"
+      message_danger: "Menu not save"
+    destroy:
+      deleted: "Menu deleted"
+      not_delete: "Menu not delete"
+    update:
+      updated: "Menu updated"
+      not_update: "Menu not update"
+    menu:
+      confirm: "You sure ?"
 
   dishes:
     show:
@@ -79,6 +106,7 @@ en:
       be_ordered: "Be ordered"
       comments: "Comments"
       submit: "Leave a message"
+
   reviews:
     create:
       message_success: "Review saved"
