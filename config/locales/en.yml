@@ -15,6 +15,7 @@ en:
       review: "Review"
       modal_title: "Review our Restaurant"
       admin: "Admin"
+      categories: "Categories"
     footer:
       brand: "Restaurant"
     application:
@@ -87,3 +88,29 @@ en:
       send: "Send"
       user_review: "User rivew"
       leave_a_review: "Leave a review"
+
+  categories:
+    index:
+      add: "Add category"
+      submit: "Submit"
+      modal_title: "Add new category"
+      number_dishes: "Dishes in this category: "
+      delete: "Delete"
+      categories: "Categories"
+    show:
+      edit: "Edit"
+      submit: "Update"
+      modal_edit: "Update category"
+      modal_add: "Add dish"
+      add: "Add dish"
+    create:
+      message_success: "Category saved"
+      message_danger: "Category not save"
+    destroy:
+      deleted: "Category deleted"
+      not_delete: "Category not delete"
+    update:
+      updated: "Category updated"
+      not_update: "Category not update"
+    category:
+      confirm: "You sure ?"

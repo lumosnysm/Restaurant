@@ -1,0 +1,53 @@
+<div class="breadcumb-area bg-img bg-overlay"
+ style="background-image: url(<%= asset_path('hero-1.jpg') %>)">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2 style="overflow-wrap:break-word;"><%= t ".categories" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="caviar-food-menu section-padding-150 clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <% if current_user.admin? %>
+          <%= link_to t(".add"), "#", class: "btn caviar-btn sticky",
+            data: {toggle: "modal", target: "#modal-add"} %>
+        <% end %>
+      </div>
+      <div class="col-10">
+        <div class="caviar-menu-slides owl-carousel clearfix p-5">
+          <div class="caviar-portfolio clearfix">
+            <div class="single_menu_item wow fadeInUp">
+              <%= render @categories %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t ".modal_title" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for @category do |f| %>
+          <div class="form-group">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+          <%= f.submit t(".submit"), class: "btn caviar-btn btn-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
