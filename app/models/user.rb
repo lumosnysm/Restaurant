@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :reviews
   has_many :orders
+  has_many :comments, dependent: :destroy
   before_save {email.downcase!}
   validates :name, presence: true, length: {maximum: Settings.name_max_length}
   validates :email, presence: true, length: {maximum: Settings.email_max_length},
@@ -8,4 +9,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.pass_min_length},
     allow_nil: true
   has_secure_password
+  
+  def current_user? user
+    self == user
+  end
 end

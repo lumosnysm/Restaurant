@@ -1,9 +1,15 @@
 class DishesController < ApplicationController
   before_action :load_dish
 
-  def show; end
+  def show
+    @supports = Supports::Dish.new params: session
+  end
 
   private
+
+  def load_categories
+    @categories = Category.all.collect{|category| [category.name, category.id]}
+  end
 
   def load_dish
     @dish = Dish.find_by id: params[:id]

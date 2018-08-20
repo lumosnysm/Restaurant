@@ -5,7 +5,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcumb-content">
-            <h2 style="overflow-wrap:break-word;"><%= @dish.name %></h2>
+            <h2 style="overflow-wrap:break-word;"><%=@dish.name %></h2>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-1">
           <div class="food-menu-title">
-            <h2><%= @dish.name %></h2>
+            <h2><%=@dish.name%></h2>
           </div>
         </div>
         <div class="col-11">
@@ -69,47 +69,29 @@
                   <div class="section-heading">
                   </div>
                   <!-- ***** Form Area Begin ***** -->
-                  <form>
+                   <%=form_for [@dish, @supports.comment], remote: true do |f| %>
                     <div class="row">
                       <div class="col-12">
-                        <textarea class="form-control" placeholder="Type your comment here..."></textarea>
+                       <%= f.text_area :content, class: "form-control" %>
                         <hr class="bg-dark">
                         <button class="btn btn-outline-dark rounded-0"
                           type="submit">
                           <%= t ".submit" %></button>
                       </div>
                     </div>
-                  </form>
+                  <% end %>
+                  
+
                   <!-- ***** Form Area End ***** -->
                 </div>
-                <br>
-                <h6>User 1</h6>
-                <p class="font-italic">
-                  esse iusto nisi consequatur sapiente a vel
-                  saepe aspernatur sed impedit et aut est autem
-                  laborum enim ex et occaecati repellendus voluptatem
-                  distinctio rerum
-                </p>
-                <h6>User 2</h6>
-                <p class="font-italic">
-                  esse iusto nisi consequatur sapiente a vel
-                  saepe aspernatur sed impedit et aut est autem
-                  laborum enim ex et occaecati repellendus voluptatem
-                  distinctio rerum
-                </p>
-                <h6>User 3</h6>
-                <p class="font-italic">
-                  esse iusto nisi consequatur sapiente a vel
-                  saepe aspernatur sed impedit et aut est autem
-                  laborum enim ex et occaecati repellendus voluptatem
-                  distinctio rerum
-                </p>
+                <br> 
+                    <%= render @dish.comments %>    
               </div>
               <div class="col-4">
                 <%= image_tag("dish-1.png", alt: "") %>
                 <div class="dish-info">
                   <h6 class="dish-name"><%= t ".comments" %></h6>
-                  <p class="dish-price">3</p>
+                  <p class="dish-price"><%=@dish.comments.count%></p>
                 </div>
               </div>
             </div>
