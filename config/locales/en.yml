@@ -154,3 +154,8 @@ en:
     dishes:
       edit:
         submit: "Update dish"
+    menus:
+      index:
+        submit: "Add menu"
+      edit:
+        submit: "Update menu"

@@ -1,0 +1,18 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".add_menu" %></h3>
+      </div>
+      <div class="card-block">
+        <%= form_for @menu, url: admin_menu_path do |f| %>
+          <fieldset>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.submit t(".submit"), class: "button-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

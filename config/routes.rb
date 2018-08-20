@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   get "/admin", to: "admin/static_pages#index"
   resources :reviews
   resources :users
-  resources :menus
-  resources :dishes, only: :show
+  resources :menus, only: %i(index show)
+  resources :dishes, only: %i(index show)
   resources :categories, only: %i(index show)
   namespace :admin do
    resources :categories
    resources :dishes, except: :index
+   resources :menus
   end
 end
