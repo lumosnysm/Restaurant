@@ -1,0 +1,11 @@
+<div class="comment-dish comment-<%= comment.id %>">
+ <h6><%= comment.user.name %></h6>
+   <p class="font-italic">
+   <%= comment.content %>
+   </p>
+ 
+  <% if logged_in? && (comment.user.current_user?(current_user) || current_user.admin?) %>
+    <%= link_to "delete", dish_comment_path(@dish, comment),
+      remote: true, method: :delete %>
+  <% end %>
+</div>
