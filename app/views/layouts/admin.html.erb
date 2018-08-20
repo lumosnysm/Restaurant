@@ -8,7 +8,13 @@
   </head>
   <body>
     <%= render "layouts/admin_nav" %>
-    <%= yield %>
+    <section id="main-content" class="column column-offset-20">
+      <% flash.each do |message_type, message| %>
+        <div class="alert background-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+    </section>
     <%= javascript_include_tag "admin", "data-turbolinks-track": "reload" %>
   </body>
 </html>

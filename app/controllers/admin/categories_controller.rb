@@ -1,7 +1,15 @@
 module Admin
   class CategoriesController < ApplicationController
+    layout "layouts/admin"
     before_action :logged_in_user, :admin_user
-    before_action :load_category, only: %i(destroy update)
+    before_action :load_category, only: %i(edit destroy update)
+
+    def index
+      @category = Category.new
+      @categories = Category.lastest
+    end
+
+    def edit; end
 
     def create
       @category = Category.new category_params
@@ -10,7 +18,7 @@ module Admin
       else
         flash[:danger] = t ".message_danger"
       end
-      redirect_to categories_url
+      redirect_back fallback_location: admin_categories_url
     end
 
     def destroy
@@ -19,7 +27,7 @@ module Admin
       else
         flash[:danger] = t ".not_delete"
       end
-      redirect_to categories_url
+      redirect_back fallback_location: admin_categories_url
     end
 
     def update
@@ -28,7 +36,7 @@ module Admin
       else
         flash[:danger] = t ".not_update"
       end
-      redirect_to @category
+      redirect_back fallback_location: admin_categories_url
     end
 
     private
@@ -41,7 +49,7 @@ module Admin
       @category = Category.find_by id: params[:id]
       return if @category
       flash[:danger] = t ".not_found"
-      redirect_to categories_url
+      redirect_to admin_categories_url
     end
   end
 end
