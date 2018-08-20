@@ -7,6 +7,11 @@ module Admin
       @menus = Menu.lastest
     end
 
+    def show
+      @dishes = @menu.dishes.distinct
+      @menudetail = @menu.picks.build
+    end
+
     def edit; end
 
     def create

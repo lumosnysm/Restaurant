@@ -159,3 +159,5 @@ en:
         submit: "Add menu"
       edit:
         submit: "Update menu"
+      show:
+        submit: "Add dish to menu"
