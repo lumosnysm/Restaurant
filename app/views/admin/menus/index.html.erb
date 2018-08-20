@@ -2,10 +2,10 @@
   <div class="column ">
     <div class="card">
       <div class="card-title">
-        <h3><%= t ".add_category" %></h3>
+        <h3><%= t ".add_menu" %></h3>
       </div>
       <div class="card-block">
-        <%= form_for @category, url: admin_categories_path do |f| %>
+        <%= form_for @menu, url: admin_menus_path do |f| %>
           <fieldset>
             <%= f.label :name %>
             <%= f.text_field :name %>
@@ -20,7 +20,7 @@
   <div class="column ">
     <div class="card">
       <div class="card-title">
-        <h3><%= t ".categories" %></h3>
+        <h3><%= t ".menus" %></h3>
       </div>
       <div class="card-block">
         <table>
@@ -29,10 +29,11 @@
               <th><%= t ".name" %></th>
               <th><%= t ".dishes" %></th>
               <th>#</th>
+              <th>#</th>
             </tr>
           </thead>
           <tbody>
-            <%= render @categories %>
+            <%= render @menus %>
           </tbody>
         </table>
       </div>
