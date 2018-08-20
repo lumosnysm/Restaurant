@@ -1,0 +1,9 @@
+<% provide :title, t(".title") %>
+<div class="container p-5">
+  <h1 class="text-center"><%= t ".title" %></h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 bg-white border p-5 shadow">
+      <%= render "form" %>
+    </div>
+  </div>
+</div>

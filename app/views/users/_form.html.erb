@@ -16,5 +16,8 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, class: "form-control rounded-0"%>
   </div>
-  <%= f.submit t(".create_account"), class: "btn btn-outline-danger rounded-0 btn-block" %>
+  <div class="form-group">
+  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-outline-danger rounded-0 btn-block" %>
 <% end %>

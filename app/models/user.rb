@@ -6,5 +6,6 @@ class User < ApplicationRecord
     format: {with: Settings.valid_email_regex}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.pass_min_length},
     allow_nil: true
+  mount_uploader :image, ImageUploader
   has_secure_password
 end
