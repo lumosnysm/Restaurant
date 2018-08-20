@@ -1,0 +1,2 @@
+$('#reservation').html('<%= "#{t('.reservation')} (#{current_order.order_items.count})" %>');
+$('#order_info').html('<%= j render "reservations/order_info" %>');

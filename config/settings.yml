@@ -7,3 +7,4 @@ review_rows: 10
 review_limit: 3
 image_sm: 50
 truncate_length: 150
+top_orders: 3

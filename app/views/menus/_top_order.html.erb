@@ -1,0 +1,17 @@
+<% top_order_menu(menu).each do |dish_id, orders| %>
+  <div class="col-12 col-sm-6 col-md-4">
+    <div class="caviar-single-dish wow fadeInUp" data-wow-delay="0.5s">
+      <%= image_tag find_dish(dish_id).image.url %>
+      <div class="dish-info">
+        <h6 class="dish-name"><%= "#{find_dish(dish_id).name}(#{orders})" %></h6>
+        <p class="dish-price"><%= "#{Settings.money_symbol}#{find_dish(dish_id).price}" %></p>
+      </div>
+      <%= form_for @order_item, remote: true do |f| %>
+        <%= f.hidden_field :dish_id, value: dish_id %>
+        <%= f.hidden_field :price_each, value: find_dish(dish_id).price %>
+        <%= f.hidden_field :quantity, value: 1 %>
+        <%= f.submit t(".order"), class: "btn caviar-btn" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
