@@ -15,7 +15,9 @@ class OrderItemsController < ApplicationController
         flash[:danger] = t ".not_added"
       end
     end
-    redirect_back fallback_location: root_url
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -26,18 +28,21 @@ class OrderItemsController < ApplicationController
     else
       flash[:danger] = t ".not_updated"
     end
-    redirect_back fallback_location: root_url
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     @order = current_order
-    @order_item = @order.order_items.find_by id: params[:id]
     if @order_item.destroy
       flash[:success] = t ".deleted"
     else
       flash[:danger] = t ".not_deleted"
     end
-    redirect_back fallback_location: root_url
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

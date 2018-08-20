@@ -3,6 +3,7 @@ class MenusController < ApplicationController
 
   def index
     @menus = Menu.lastest
+    @order_item = current_order.order_items.new
   end
 
   def show

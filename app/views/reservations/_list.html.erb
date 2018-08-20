@@ -1,5 +1,5 @@
 <tr>
-  <%= form_for order_item do |f| %>
+  <%= form_for order_item, remote: true do |f| %>
   <td><%= link_to order_item.dish.name, dish, class: "text-dark" %></td>
   <td><%= "#{Settings.money_symbol}#{dish.price}" %></td>
   <td><%= f.number_field :quantity, min: 1 %></td>

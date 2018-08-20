@@ -11,8 +11,12 @@
     </div>
     <div class="dish-value">
       <h3><%= "#{Settings.money_symbol}#{dish.price}" %></h3>
-      <a href="#" class="btn caviar-btn"><span></span>
-        <%= t ".order" %></a>
+      <%= form_for @order_item, remote: true do |f| %>
+        <%= f.hidden_field :dish_id, value: dish.id %>
+        <%= f.hidden_field :price_each, value: dish.price %>
+        <%= f.hidden_field :quantity, value: 1 %>
+        <%= f.submit t(".order"), class: "btn caviar-btn" %>
+      <% end %>
     </div>
   </div>
 </div>

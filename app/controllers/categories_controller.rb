@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in_user
   before_action :load_category, only: :show
 
   def index
@@ -10,10 +9,11 @@ class CategoriesController < ApplicationController
   def show
     @dish = @category.dishes.build
     @dishes = @category.dishes.lastest
+    @order_item = current_order.order_items.new
   end
 
   private
-  
+
   def load_category
     @category = Category.find_by id: params[:id]
     return if @category

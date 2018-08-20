@@ -69,6 +69,8 @@ en:
     error_messages:
       message : "The form contain "
       error: " error"
+    top_order:
+      order: "Order"
 
   sessions:
     create:
@@ -90,6 +92,8 @@ en:
       number_dishes: "Dishes in this menu: "
       order: "Order"
       view_menu: "View the menu"
+    top_order:
+      order: "Order"
 
   dishes:
     dish:
@@ -192,8 +196,15 @@ en:
   orders:
     update:
       time_default: "%Y-%m-%d %H:%M:%S"
+      
   search:
     index:
       search: "Find a dish"
       message_danger: "Please input keywords"
       message_success: "results found "
+
+  order_items:
+    create:
+      reservation: "Reservation"
+    destroy:
+      reservation: "Reservation"
