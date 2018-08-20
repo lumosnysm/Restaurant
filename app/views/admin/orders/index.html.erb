@@ -1,0 +1,27 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".orders" %></h3>
+      </div>
+      <div class="card-block">
+        <table>
+          <thead>
+            <tr>
+              <th><%= t ".id" %></th>
+              <th><%= t ".user" %></th>
+              <th><%= t ".time" %></th>
+              <th><%= t ".info" %></th>
+              <th><%= t ".total" %></th>
+              <th><%= t ".message" %></th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @orders %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
