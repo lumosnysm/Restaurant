@@ -1,0 +1,10 @@
+<tr>
+  <%= form_for order_item do |f| %>
+  <td><%= link_to order_item.dish.name, dish, class: "text-dark" %></td>
+  <td><%= "#{Settings.money_symbol}#{dish.price}" %></td>
+  <td><%= f.number_field :quantity, min: 1 %></td>
+  <td><%= f.submit t(".update"), class: "btn btn-outline-primary btn-sm" %></td>
+  <td><%= link_to t(".delete"), order_item, method: :delete,
+    class: "btn btn-outline-danger btn-sm" %></td>
+  <% end %>
+</tr>

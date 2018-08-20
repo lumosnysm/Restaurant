@@ -174,8 +174,18 @@ en:
       destroy:
         not_delete: "Not delete"
         deleted: "Deleted"
-
     staffs:
       edit:
         placeholder_description: "Please input address"
         submit: "submit"
+
+  reservations:
+    reservation_form:
+      message: "Type your message here!"
+    list:
+      update: "Update"
+      delete: "Delete"
+
+  orders:
+    update:
+      time_default: "%Y-%m-%d %H:%M:%S"
