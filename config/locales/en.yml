@@ -20,6 +20,8 @@ en:
       brand: "Restaurant"
     application:
       title_base: "Restaurant"
+    admin_nav:
+      brand: "Restaurant Admin"
 
   static_pages:
     home:
