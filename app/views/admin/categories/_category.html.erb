@@ -1,5 +1,5 @@
 <tr>
-  <td><%= category.name %></td>
+  <td><%= link_to category.name, admin_category_path(category) %></td>
   <td><%= category.dishes.count %></td>
   <td><%= link_to t(".edit"), edit_admin_category_path(category) %></td>
   <td><%= link_to t(".delete"), admin_category_path(category), method: :delete,

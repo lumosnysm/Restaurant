@@ -1,7 +1,5 @@
 module Admin
-  class StaticPagesController < ApplicationController
-    layout "layouts/admin"
-
+  class StaticPagesController < AdminBaseController
     def index; end
   end
 end

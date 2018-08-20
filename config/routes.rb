@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   resources :reviews
   resources :users
   resources :menus
-  resources :dishes
+  resources :dishes, only: :show
   resources :categories, only: %i(index show)
   namespace :admin do
-    resources :categories
+   resources :categories
+   resources :dishes, except: :index
   end
 end
