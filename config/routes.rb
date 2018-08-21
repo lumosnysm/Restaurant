@@ -16,5 +16,6 @@ Rails.application.routes.draw do
    resources :categories
    resources :dishes, except: :index
    resources :menus
+   resources :menu_details
   end
 end
