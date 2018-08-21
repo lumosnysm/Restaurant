@@ -21,29 +21,9 @@
           <%= link_to t(".add"), "#", class: "btn caviar-btn sticky",
             data: {toggle: "modal", target: "#modal-add"} %>
         <% end %>
-        <div class="food-menu-title">
-          <h2><%= @category.name %></h2>
-        </div>
       </div>
       <div class="col-10">
-        <div class="caviar-menu-slides owl-carousel clearfix">
-          <div class="caviar-portfolio clearfix">
-            <div class="single_menu_item wow fadeInUp">
-              <div class="d-sm-flex align-items-center">
-                <div class="dish-thumb">
-                  <%= image_tag("dish-1.png", alt: "") %>
-                </div>
-                <div class="dish-description">
-                  <h3>Lorem Ipsum Dolor Sit Amet</h3>
-                  <p>Sed commodo augue eu diam tincidunt, sit amet auctor lectus semper. Mauris porttitor diam at fringilla tempor.</p>
-                </div>
-                <div class="dish-value">
-                  <h3>$45</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render @dishes %>
       </div>
     </div>
   </div>
@@ -78,6 +58,27 @@
         </button>
       </div>
       <div class="modal-body">
+        <%= form_for @dish do |f| %>
+          <%= hidden_field_tag :category_id, @category.id %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control rounded-0" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :price %>
+            <%= f.number_field :price, class: "form-control rounded-0" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, placeholder: t(".placeholder_description"), class: "form-control rounded-0" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.file_field :image, class: "form-control rounded-0" %>
+          </div>
+          <%= f.submit t(".create_dish"), class: "btn caviar-btn btn-block" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -7,7 +7,10 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def show; end
+  def show
+    @dish = @category.dishes.build
+    @dishes = @category.dishes.lastest
+  end
 
   def create
     @category = Category.new category_params
