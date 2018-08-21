@@ -141,3 +141,10 @@ en:
       not_update: "Category not update"
     category:
       confirm: "You sure ?"
+
+  admin:
+    categories:
+      index:
+        submit: "Add category"
+      edit:
+        submit: "Update category"
