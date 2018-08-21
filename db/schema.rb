@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_005924) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.bigint "category_id"
+    t.string "image"
     t.index ["category_id"], name: "index_dishes_on_category_id"
   end
 
