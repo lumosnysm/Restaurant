@@ -6,9 +6,13 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "/admin", to: "admin/static_pages#index"
   resources :reviews
   resources :users
   resources :menus
   resources :dishes
-  resources :categories
+  resources :categories, only: %i(index show)
+  namespace :admin do
+    resources :categories
+  end
 end
