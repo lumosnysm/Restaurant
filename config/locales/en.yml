@@ -83,16 +83,12 @@ en:
   menus:
     show:
       top_order: "Top order"
+    menu:
+      number_dishes: "Dishes in this menu: "
 
   dishes:
     dish:
-      confirm: "Confirm"
-    create:
-      message_success: "Dish saved"
-      message_danger: "Can not save"
-    destroy:
-      message_success: "Dish deleted"
-      message_danger: "Can not delete"
+      order: "Order"
     load_dish:
       message_danger: "Dish not exist"
     show:
@@ -104,6 +100,9 @@ en:
       be_ordered: "Be ordered"
       comments: "Comments"
       submit: "Leave a message"
+    dishes_in_menu:
+      order: "Order"
+
   reviews:
     create:
       message_success: "Review saved"
@@ -119,7 +118,6 @@ en:
       add: "Add category"
       submit: "Submit"
       modal_title: "Add new category"
-      number_dishes: "Dishes in this category: "
       delete: "Delete"
       categories: "Categories"
     show:
@@ -141,6 +139,7 @@ en:
       not_update: "Category not update"
     category:
       confirm: "You sure ?"
+      number_dishes: "Dishes in this category: "
 
   admin:
     categories:

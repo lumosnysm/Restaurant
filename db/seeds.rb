@@ -4,18 +4,47 @@ User.create! name: "Admin",
   password_confirmation: "111111",
   admin: true
 
-10.times do |n|
-  name = FFaker::Lorem.word
-  Category.create! name: name
-end
+Category.create! name: "fruit"
+Category.create! name: "herb or spice"
+Category.create! name: "meat"
+Category.create! name: "vegetable"
 
-50.times do |n|
-  name = FFaker::Lorem.sentence 1
+10.times do |n|
+  name = FFaker::Food.fruit
   description = FFaker::Lorem.sentence 50
   price = rand(20..100)
-  id = rand(1..10)
   Dish.create! name: name,
     price: price,
     description: description,
-    category_id: id
+    category_id: 1
+end
+
+10.times do |n|
+  name = FFaker::Food.herb_or_spice
+  description = FFaker::Lorem.sentence 50
+  price = rand(20..100)
+  Dish.create! name: name,
+    price: price,
+    description: description,
+    category_id: 2
+end
+
+10.times do |n|
+  name = FFaker::Food.meat
+  description = FFaker::Lorem.sentence 50
+  price = rand(20..100)
+  Dish.create! name: name,
+    price: price,
+    description: description,
+    category_id: 3
+end
+
+10.times do |n|
+  name = FFaker::Food.vegetable
+  description = FFaker::Lorem.sentence 50
+  price = rand(20..100)
+  Dish.create! name: name,
+    price: price,
+    description: description,
+    category_id: 4
 end
