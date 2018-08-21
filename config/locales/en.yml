@@ -148,3 +148,9 @@ en:
         submit: "Add category"
       edit:
         submit: "Update category"
+      show:
+        submit: "Add dish"
+        placeholder_description: "Dish description"
+    dishes:
+      edit:
+        submit: "Update dish"

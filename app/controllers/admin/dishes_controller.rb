@@ -1,22 +1,13 @@
 module Admin
-  class CategoriesController < AdminBaseController
-    before_action :load_category, except: %i(index create)
-
-    def index
-      @category = Category.new
-      @categories = Category.lastest
-    end
-
-    def show
-      @dish = @category.dishes.build
-      @dishes = @category.dishes.lastest
-    end
+  class DishesController < AdminBaseController
+    before_action :load_dish, except: :create
 
     def edit; end
 
     def create
-      @category = Category.new category_params
-      if @category.save
+      @category = Category.find_by id: params[:category_id]
+      @dish = @category.dishes.build dish_params
+      if @dish.save
         flash[:success] = t ".message_success"
       else
         flash[:danger] = t ".message_danger"
@@ -25,7 +16,7 @@ module Admin
     end
 
     def destroy
-      if @category.destroy
+      if @dish.destroy
         flash[:success] = t ".deleted"
       else
         flash[:danger] = t ".not_delete"
@@ -34,7 +25,7 @@ module Admin
     end
 
     def update
-      if @category.update_attributes category_params
+      if @dish.update_attributes dish_params
         flash[:success] = t ".updated"
       else
         flash[:danger] = t ".not_update"
@@ -44,15 +35,15 @@ module Admin
 
     private
 
-    def category_params
-      params.require(:category).permit :name
+    def dish_params
+      params.require(:dish).permit :name, :price, :description, :image
     end
 
-    def load_category
-      @category = Category.find_by id: params[:id]
-      return if @category
+    def load_dish
+      @dish = Dish.find_by id: params[:id]
+      return if @dish
       flash[:danger] = t ".not_found"
-      redirect_to admin_categories_url
+      redirect_to admin_url
     end
   end
 end
