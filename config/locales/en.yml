@@ -160,3 +160,9 @@ en:
         submit: "Update menu"
       show:
         submit: "Add dish to menu"
+
+  reservations:
+    reservation:
+      done: "Done"
+      status: "Status: "
+      inprogress: "Inprogress"

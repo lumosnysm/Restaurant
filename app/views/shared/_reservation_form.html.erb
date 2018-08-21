@@ -1,0 +1,13 @@
+<%= form_for @reservation do |f| %>
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <%= f.date_field :input_date, class: "form-control"%>
+    </div>
+    <div class="col-12 col-lg-6">
+      <%= f.time_field :input_time, class: "form-control"%>
+    </div>
+    <div class="col-12">
+      <%= f.submit " Reserve Your Desk", class: "btn caviar-btn" %>
+    </div>
+  </div>
+<% end %>

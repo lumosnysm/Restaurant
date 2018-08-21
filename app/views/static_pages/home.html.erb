@@ -192,28 +192,7 @@
       <div class="section-heading">
         <h2><%= t ".reservation" %></h2>
       </div>
-      <form action="#">
-        <div class="row">
-          <div class="col-12 col-lg-6">
-            <input type="date" class="form-control">
-          </div>
-          <div class="col-12 col-lg-6">
-            <input type="time" class="form-control">
-          </div>
-          <div class="col-12 col-lg-6">
-            <input type="text" class="form-control" placeholder="Select Persons">
-          </div>
-          <div class="col-12 col-lg-6">
-            <input type="text" class="form-control" placeholder="Last name">
-          </div>
-          <div class="col-12">
-            <textarea name="reservation-message" class="form-control" id="reservationMessage" cols="30" rows="10" placeholder="Your Message"></textarea>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn caviar-btn"><span></span> Reserve Your Desk</button>
-          </div>
-        </div>
-      </form>
+      <%= render "shared/reservation_form" %>
     </div>
   </div>
   <div class="reservation-side-thumb wow fadeInRightBig" data-wow-delay="0.5s">

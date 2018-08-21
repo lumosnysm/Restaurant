@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :menus, only: %i(index show)
   resources :dishes, only: %i(index show)
   resources :categories, only: %i(index show)
+  resources :reservations
   namespace :admin do
    resources :categories
    resources :dishes, except: :index
