@@ -17,5 +17,7 @@ Rails.application.routes.draw do
    resources :dishes, except: :index
    resources :menus
    resources :menu_details
+   resources :roles
+   resources :staffs
   end
 end

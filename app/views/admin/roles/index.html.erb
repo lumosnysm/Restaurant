@@ -1,0 +1,47 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".add_role" %></h3>
+      </div>
+      <div class="card-block">
+        <%= form_for @role, url: admin_roles_path do |f| %>
+          <fieldset>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.label :salary %>
+            <%= f.number_field :salary %>
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+            <%= f.submit t(".submit"), class: "button-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".roles" %></h3>
+      </div>
+      <div class="card-block">
+        <table>
+          <thead>
+            <tr>
+              <th><%= t ".name" %></th>
+              <th><%= t ".description" %></th>
+              <th><%= t ".salary" %></th>
+              <th>#</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @roles %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

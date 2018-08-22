@@ -1,0 +1,9 @@
+<tr>
+  <td><%= staff.name %></td>
+  <td><%= staff.role_name %></td>
+  <td><%= staff.email %></td>
+  <td><%= staff.address %></td>
+  <td><%= link_to t(".edit"), edit_admin_staff_path(staff) %></td>
+  <td><%= link_to t(".delete"), admin_staff_path(staff), method: :delete,
+    data: {confirm: t(".confirm")} %></td>
+</tr>
