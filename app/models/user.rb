@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :comments, dependent: :destroy
   has_many :reviews
   has_many :orders
   before_save {email.downcase!}
@@ -9,4 +10,8 @@ class User < ApplicationRecord
     allow_nil: true
   mount_uploader :image, ImageUploader
   has_secure_password
+  
+  def current_user? user
+    self == user
+  end
 end

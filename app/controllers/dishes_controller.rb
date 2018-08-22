@@ -1,7 +1,9 @@
 class DishesController < ApplicationController
   before_action :load_dish
 
-  def show; end
+  def show
+    @comment = Comment.new
+  end
 
   private
 
@@ -10,5 +12,9 @@ class DishesController < ApplicationController
     return if @dish
     flash.now[:danger] = t ".message_danger"
     redirect_to root_url
+  end
+
+  def dish_params
+    params.require(:dish).permit :name, :price, :description, :image
   end
 end

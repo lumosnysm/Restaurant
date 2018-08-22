@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "comments/new"
   root "static_pages#home"
   get "/contact", to: "static_pages#contact"
   get "/signup", to: "users#new"
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :users
   resources :menus, only: %i(index show)
   resources :dishes, only: %i(index show)
+  resources :menus
   resources :categories, only: %i(index show)
   resources :order_items
   resources :orders
@@ -24,5 +26,8 @@ Rails.application.routes.draw do
    resources :roles
    resources :staffs
    resources :orders, only: %i(index update)
+  end
+  resources :dishes, only: %i(index show) do
+    resources :comments, only: %i(create destroy)
   end
 end
