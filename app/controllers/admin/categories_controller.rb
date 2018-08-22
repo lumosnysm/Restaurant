@@ -24,15 +24,6 @@ module Admin
       redirect_back fallback_location: admin_categories_url
     end
 
-    def destroy
-      if @category.destroy
-        flash[:success] = t ".deleted"
-      else
-        flash[:danger] = t ".not_delete"
-      end
-      redirect_back fallback_location: admin_categories_url
-    end
-
     def update
       if @category.update_attributes category_params
         flash[:success] = t ".updated"

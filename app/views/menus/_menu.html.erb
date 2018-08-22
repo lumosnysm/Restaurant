@@ -1,12 +1,12 @@
 <div class="d-sm-flex align-items-center p-2">
   <div class="dish-description">
     <h3>
-      <i class="fa fa-list-alt" aria-hidden="true"></i>
-      <%= link_to category.name, category, class: "text-dark" %>
+      <i class="fa fa-clipboard" aria-hidden="true"></i>
+      <%= link_to menu.name, menu, class: "text-dark" %>
     </h3>
     <p class="font-italic">
       <%= t ".number_dishes" %>
-      <%= category.dishes.count %>
+      <%= menu.dishes.count %>
     </p>
   </div>
 </div>

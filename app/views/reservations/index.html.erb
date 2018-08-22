@@ -1,0 +1,40 @@
+<div class="breadcumb-area bg-img bg-overlay hero1">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2>
+            <%= t ".your reservations" %>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="caviar-food-menu section-padding-150 clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <div class="food-menu-title">
+          <h2><%= t ".reservation" %></h2>
+        </div>
+      </div>
+      <div class="col-10">
+        <%= render @reservations %>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="caviar-reservation-area d-md-flex align-items-center" id="reservation">
+  <div class="reservation-form-area d-flex justify-content-end">
+    <div class="reservation-form">
+      <div class="section-heading">
+        <h2><%= t ".reservation" %></h2>
+      </div>
+      <%= render "shared/reservation_form" %>
+    </div>
+  </div>
+  <div class="reservation-side-thumb wow fadeInRightBig" data-wow-delay="0.5s">
+    <%= image_tag("hero-4.jpg", alt: "") %>
+  </div>
+</section>

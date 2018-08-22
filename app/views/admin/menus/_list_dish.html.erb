@@ -1,0 +1,6 @@
+<tr>
+  <td><%= dish.name %></td>
+  <td><%= dish.category.name %></td>
+  <td><%= link_to t(".delete"), admin_menu_detail_path(dish), method: :delete,
+    data: {confirm: t(".confirm")}%></td>
+</tr>

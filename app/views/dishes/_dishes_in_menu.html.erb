@@ -1,0 +1,18 @@
+<div class="single_menu_item <%= dish.category.id %> wow fadeInUp">
+  <div class="d-sm-flex align-items-center">
+    <div class="dish-thumb">
+      <%= image_tag dish.image.url %>
+    </div>
+    <div class="dish-description">
+      <h3><%= link_to dish.name, dish, class: "text-dark" %></h3>
+      <p><%= truncate dish.description, length: Settings.truncate_length %></p>
+    </div>
+    <div class="dish-value">
+      <h3>
+        <%= "#{Settings.money_symbol}#{dish.price}" %>
+      </h3>
+      <a href="#" class="btn caviar-btn"><span></span>
+        <%= t ".order" %></a>
+    </div>
+  </div>
+</div>

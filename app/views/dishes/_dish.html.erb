@@ -6,15 +6,15 @@
           <%= image_tag dish.image.url %>
         </div>
         <div class="dish-description">
-          <h3><%= dish.name %></h3>
-          <p><%= dish.description %></p>
-          <% if current_user.admin? %>
-            <%= link_to t(".delete"), dish, method: :delete,
-              data: {confirm: t(".confirm")} %>
-          <% end %>
+          <h3><%= link_to dish.name, dish, class: "text-dark" %></h3>
+          <p>
+            <%= truncate dish.description, length: Settings.truncate_length %>
+          </p>
         </div>
         <div class="dish-value">
           <h3><%= "#{Settings.money_symbol}#{dish.price}" %></h3>
+          <a href="#" class="btn caviar-btn"><span></span>
+            <%= t ".order" %></a>
         </div>
       </div>
     </div>

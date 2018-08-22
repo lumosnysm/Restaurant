@@ -1,0 +1,47 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".add_dish" %></h3>
+      </div>
+      <div class="card-block">
+        <%= form_for @menudetail, url: admin_menu_details_path do |f| %>
+          <%= hidden_field_tag :menu_id, @menu.id %>
+          <fieldset>
+            <%= f.label :category_id %>
+            <%= f.collection_select :category_id, Category.all, :id, :name,
+             include_blank: true, prompt: t(".select_category") %>
+            <%= f.label :dish_id %>
+            <%= f.grouped_collection_select :dish_id, Category.all, :dishes_not_pick,
+            :name, :id, :name ,include_blank: true, prompt: t(".select_dish") %>
+            <%= f.submit t(".submit"), class: "button-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".menus" %></h3>
+      </div>
+      <div class="card-block">
+        <table>
+          <thead>
+            <tr>
+              <th><%= t ".name" %></th>
+              <th><%= t ".category" %></th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "admin/menus/list_dish",
+             collection: @dishes, as: :dish %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

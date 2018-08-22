@@ -1,0 +1,25 @@
+<div class="caviar-menu-slides owl-carousel clearfix mb-2">
+  <div class="caviar-portfolio clearfix">
+    <div class="single_menu_item wow fadeInUp">
+      <div class="d-sm-flex align-items-center">
+        <div class="dish-description">
+          <h3>
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <%= reservation.time.in_time_zone("Hanoi") %>
+          </h3>
+          <p class="font-italic">
+            <%= t ".status" %>
+            <%= reservation.status == true ? t(".done") : t(".inprogress") %>
+          </p>
+        </div>
+        <div class="dish-value">
+          <% unless reservation.status %>
+            <%= form_for reservation do |f| %>
+              <%= f.submit t(".done"), class: "btn caviar-btn" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

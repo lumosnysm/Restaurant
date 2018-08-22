@@ -40,19 +40,13 @@
                 <a class="nav-link" href="#about">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#menu">Menu</a>
+                <%= link_to t(".menus"), menus_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to t(".categories"), categories_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#awards">Awards</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#testimonial">Reviews</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#reservation">Reservation</a>
+                <%= link_to t(".reservations"), reservations_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to t(".contact"), contact_path, class: "nav-link" %>
@@ -64,7 +58,7 @@
                   aria-expanded="false"><%= t ".account" %></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <% if current_user.admin? %>
-                    <%= link_to t(".admin"), "#", class: "dropdown-item" %>
+                    <%= link_to t(".admin"), admin_path, class: "dropdown-item" %>
                   <% else %>
                     <%= link_to current_user.name, "#", class: "dropdown-item" %>
                   <% end %>
