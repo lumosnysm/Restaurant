@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_033143) do
+ActiveRecord::Schema.define(version: 2018_08_21_005924) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2018_08_20_033143) do
     t.string "image"
     t.bigint "category_id"
     t.index ["category_id"], name: "index_dishes_on_category_id"
+  end
+
+  create_table "menu_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "menu_id"
+    t.bigint "dish_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_menu_details_on_category_id"
+    t.index ["dish_id"], name: "index_menu_details_on_dish_id"
+    t.index ["menu_id"], name: "index_menu_details_on_menu_id"
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,5 +65,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_033143) do
   end
 
   add_foreign_key "dishes", "categories"
+  add_foreign_key "menu_details", "categories"
+  add_foreign_key "menu_details", "dishes"
+  add_foreign_key "menu_details", "menus"
   add_foreign_key "reviews", "users"
 end

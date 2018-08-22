@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to menu.name, admin_menu_path(menu) %></td>
+  <td><%= menu.dishes.count %></td>
+  <td><%= link_to t(".edit"), edit_admin_menu_path(menu) %></td>
+  <td><%= link_to t(".delete"), admin_menu_path(menu), method: :delete,
+    data: {confirm: t(".confirm")}%></td>
+</tr>
