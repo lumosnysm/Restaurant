@@ -4,3 +4,4 @@
 //= require js/bootstrap/bootstrap.min.js
 //= require js/others/plugins.js
 //= require js/active.js
+//= require search_dishes

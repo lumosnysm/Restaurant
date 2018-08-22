@@ -1,0 +1,29 @@
+<div class="bg-img bg-overlay hero1">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2><%= t ".search" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-10 mt-5">
+      <% flash.each do |message_type, message| %>
+          <span id="message_search"><%= message %></span>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="caviar-food-menu section-padding-150 clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <%= render @dishes %>
+      </div>
+    </div>
+  </div>
+</div>
