@@ -162,3 +162,20 @@ en:
         submit: "Update menu"
       show:
         submit: "Add dish to menu"
+    roles:
+      index:
+        name: "name"
+        salary: "salary"
+        description: "description"
+        submit: "submit"
+      show:
+        placeholder_description: "Please input address"
+        submit: "submit"
+      destroy:
+        not_delete: "Not delete"
+        deleted: "Deleted"
+
+    staffs:
+      edit:
+        placeholder_description: "Please input address"
+        submit: "submit"

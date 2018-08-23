@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_005924) do
+ActiveRecord::Schema.define(version: 2018_08_22_043827) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,24 @@ ActiveRecord::Schema.define(version: 2018_08_21_005924) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "salary"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_staffs_on_role_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -69,4 +87,5 @@ ActiveRecord::Schema.define(version: 2018_08_21_005924) do
   add_foreign_key "menu_details", "dishes"
   add_foreign_key "menu_details", "menus"
   add_foreign_key "reviews", "users"
+  add_foreign_key "staffs", "roles"
 end

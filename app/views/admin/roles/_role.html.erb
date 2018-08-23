@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to role.name, admin_role_path(role) %></td>
+  <td><%= role.description %></td>
+  <td><%= role.salary %></td>
+  <td><%= link_to t(".edit"), edit_admin_role_path(role) %></td>
+  <td><%= link_to t(".delete"), admin_role_path(role), method: :delete,
+    data: {confirm: t(".confirm")}%></td>
+</tr>

@@ -1,0 +1,22 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".update_staff" %></h3>
+      </div>
+      <div class="card-block">
+        <%= form_for @staff, url: admin_staff_path do |f| %>
+          <fieldset>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            <%= f.label :address %>
+            <%= f.text_field :address, placeholder: t(".placeholder_description") %>
+            <%= f.submit t(".submit"), class: "button-primary" %>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

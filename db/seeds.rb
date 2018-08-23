@@ -48,3 +48,12 @@ end
     description: description,
     category_id: 4
 end
+
+10.times do |n|
+  name = FFaker::Lorem.word
+  salary = rand(100..1000)
+  description = FFaker::Lorem.sentence 50
+  Role.create! name: name,
+    salary: salary,
+    description: description
+end
