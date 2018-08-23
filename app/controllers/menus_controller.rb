@@ -8,6 +8,7 @@ class MenusController < ApplicationController
   def show
     @categories = @menu.categories.distinct
     @dishes = @menu.dishes.distinct
+    @order_item = current_order.order_items.new
   end
 
   private
