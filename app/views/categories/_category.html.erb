@@ -1,12 +1,12 @@
 <div class="d-sm-flex align-items-center p-2">
   <div class="dish-description">
-    <h3><%= link_to category.name, category, class: "text-dark" %></h3>
+    <h3>
+      <i class="fa fa-list-alt" aria-hidden="true"></i>
+      <%= link_to category.name, category, class: "text-dark" %>
+    </h3>
     <p class="font-italic">
       <%= t ".number_dishes" %>
+      <%= category.dishes.count %>
     </p>
-    <% if current_user.admin? %>
-      <%= link_to t(".delete"), category, method: :delete,
-        data: {confirm: t(".confirm")}%>
-    <% end %>
   </div>
 </div>
