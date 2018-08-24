@@ -21,7 +21,7 @@
       <tbody>
         <%= render current_order.order_items %>
         <p id="total">
-          <%= number_to_currency current_order.total %>
+          <%= number_to_currency current_order.order_total_amount %>
         </p>
       </tbody>
     </table>

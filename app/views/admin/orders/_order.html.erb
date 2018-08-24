@@ -1,0 +1,19 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= link_to order.user_name, order_path(order) %></td>
+  <td><%= order.time %></td>
+  <td>
+    <%= render partial: "admin/orders/info_order", collection: order.order_items, as: :order_item %>
+  </td>
+  <td><%= "#{Settings.money_symbol} #{order.order_total_amount}" %></td>
+  <td><div id="message_order"><%= order.message %></div></td>
+  <td>
+    <% if order.status %>
+      <button class="button button-outline"><%= t ".confirmed" %></button>
+    <% else %>
+      <%= form_for order, url: admin_order_path(order) do |f| %>
+        <%= f.submit t(".confirm"), class: "button-primary" %>
+      <% end %>
+    <% end %>
+  </td>
+</tr>

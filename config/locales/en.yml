@@ -185,6 +185,9 @@ en:
       edit:
         placeholder_description: "Please input address"
         submit: "submit"
+    orders:
+      order:
+        confirm: "confirm"
 
   reservations:
     reservation_form:

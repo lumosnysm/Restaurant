@@ -23,5 +23,6 @@ Rails.application.routes.draw do
    resources :menu_details
    resources :roles
    resources :staffs
+   resources :orders, only: %i(index update)
   end
 end
