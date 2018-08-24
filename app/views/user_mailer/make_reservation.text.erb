@@ -1,0 +1,9 @@
+<%= t ".welcome" %>
+<%= t ".sayhi" %>.
+<%= @user.name %>
+<%= t ".time" %>: <%= @user.orders.last.time %>
+<%= t ".message" %>: <%= @user.orders.last.message %>
+<%= t ".order_total_amount" %>: <%= "#{Settings.money_symbol}#{@user.orders.last.order_total_amount}" %>
+<% @user.orders.last.order_items.each do |order_item| %>
+  <%= order_item.dish.name %>: <%= order_item.quantity %>
+<% end %>

@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     if order_update_params
       flash[:success] = t ".saved"
       session.delete :order_id
+      UserMailer.make_reservation(current_user).deliver_now
     else
       flash[:danger] = t ".not_save"
     end
