@@ -16,6 +16,9 @@ en:
       modal_title: "Review our Restaurant"
       admin: "Admin"
       categories: "Categories"
+      search: "Find a dish"
+      key: "Please input here"
+      search_placeholder: "Enter keyword ..."
     footer:
       brand: "Restaurant"
     application:
@@ -189,3 +192,8 @@ en:
   orders:
     update:
       time_default: "%Y-%m-%d %H:%M:%S"
+  search:
+    index:
+      search: "Find a dish"
+      message_danger: "Please input keywords"
+      message_success: "results found "

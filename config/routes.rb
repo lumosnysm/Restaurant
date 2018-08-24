@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/admin", to: "admin/static_pages#index"
   get "/reservation", to: "reservations#show"
+  get "/search", to: "search#index"
   resources :reviews
   resources :users
   resources :menus, only: %i(index show)
