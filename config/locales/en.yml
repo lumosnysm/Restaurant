@@ -199,7 +199,7 @@ en:
   orders:
     update:
       time_default: "%Y-%m-%d %H:%M:%S"
-      
+
   search:
     index:
       search: "Find a dish"
@@ -211,3 +211,12 @@ en:
       reservation: "Reservation"
     destroy:
       reservation: "Reservation"
+
+  user_mailer:
+    make_reservation:
+      subject: "Reservation"
+      welcome: "Welcome to our restaurant! Here is infomation about your reservation:"
+      time: "Time"
+      message: "Message"
+      order_total_amount: "Order total amount"
+      sayhi: "Hi"
