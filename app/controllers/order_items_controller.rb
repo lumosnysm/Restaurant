@@ -1,5 +1,6 @@
 class OrderItemsController < ApplicationController
   before_action :logged_in_user
+  before_action :load_order_item, only: %i(update destroy)
 
   def create
     @order = current_order
@@ -21,8 +22,6 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    @order = current_order
-    @order_item = @order.order_items.find_by id: params[:id]
     if @order_item.update_attributes order_item_params
       flash[:success] = t ".updated"
     else
@@ -34,7 +33,6 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    @order = current_order
     if @order_item.destroy
       flash[:success] = t ".deleted"
     else
@@ -49,5 +47,13 @@ class OrderItemsController < ApplicationController
 
   def order_item_params
     params.require(:order_item).permit(:quantity, :dish_id, :price_each)
+  end
+
+  def load_order_item
+    @order = current_order
+    @order_item = @order.order_items.find_by id: params[:id]
+    return if @order_item
+    flash[:danger] = t ".not_found"
+    redirect_to root_url
   end
 end
