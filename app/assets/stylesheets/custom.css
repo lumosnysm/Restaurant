@@ -46,3 +46,13 @@
 .ul-result_search li{
   background: black;
 }
+
+#message_order {
+  width: 350px;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.order-history td {
+  white-space: nowrap;
+}

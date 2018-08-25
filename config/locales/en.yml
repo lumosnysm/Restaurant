@@ -214,6 +214,8 @@ en:
     create:
       saved: "order saved"
       not_save: "order not save"
+    order:
+      time_default: "%Y-%m-%d %H:%M:%S"
 
   search:
     index:

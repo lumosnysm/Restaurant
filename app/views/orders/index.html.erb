@@ -1,0 +1,30 @@
+<div class="bg-img bg-overlay hero1">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcumb-content">
+          <h2><%= t ".order_history" %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-bordred order-history">
+          <thead>
+            <th><%= t ".time" %></th>
+            <th><%= t ".order_details" %></th>
+            <th><%= t ".amount" %></th>
+            <th><%= t ".message" %></th>
+          </thead>
+          <tbody>
+            <%= render @orders %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

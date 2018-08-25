@@ -25,6 +25,10 @@ class OrdersController < ApplicationController
     redirect_back fallback_location: root_url
   end
 
+  def index
+    @orders = current_user.orders.list_order.lastest
+  end
+
   private
 
   def load_time

@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <% if order.time %>
+      <%= (order.time).strftime t ".time_default" %>
+    <% end %>
+  </td>
+  <td>
+    <%= render partial: "admin/orders/info_order", collection: order.order_items, as: :order_item %>
+  </td>
+  <td><%= "#{Settings.money_symbol} #{order.order_total_amount}" %></td>
+  <td>
+    <div id="message_order"><%= order.message %></div>
+  </td>
+</tr>
