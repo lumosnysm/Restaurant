@@ -1,18 +1,21 @@
-<div class="row grid-responsive">
-  <div class="column ">
-    <div class="card">
-      <div class="card-title">
-        <h3><%= t ".edit_category" %></h3>
-      </div>
-      <div class="card-block">
-        <%= form_for @category, url: admin_category_path do |f| %>
+<%= form_for @category, url: admin_category_path do |f| %>
+  <div class="row grid-responsive">
+    <div class="column ">
+      <div class="card">
+        <div class="card-title">
+          <h3><%= t ".edit_category" %></h3>
+        </div>
+        <div class="card-block">
           <fieldset>
             <%= f.label :name %>
             <%= f.text_field :name %>
             <%= f.submit t(".submit"), class: "button-primary" %>
           </fieldset>
-        <% end %>
+        </div>
       </div>
+      <%= f.fields_for :dishes do |ff| %>
+        <%= render "dish_field", f: ff %>
+      <% end %>
     </div>
   </div>
-</div>
+<% end %>

@@ -36,7 +36,8 @@ module Admin
     private
 
     def category_params
-      params.require(:category).permit :name
+      params.require(:category).permit :name, dishes_attributes:
+        [:id, :name, :price, :description, :image, :_destroy]
     end
 
     def load_category
