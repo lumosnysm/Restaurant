@@ -7,6 +7,10 @@
       <%= f.time_field :input_time, class: "form-control", required: true %>
     </div>
     <div class="col-12 col-lg-12">
+      <%= f.number_field :people, class: "form-control", min: Settings.min_people,
+        max: Settings.max_people, required: true, placeholder: t(".number_people") %>
+    </div>
+    <div class="col-12 col-lg-12">
       <hr>
       <%= f.text_area :message, class: "form-control",
         placeholder: t(".message") %>

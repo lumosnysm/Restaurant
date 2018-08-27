@@ -3,6 +3,10 @@
   <td><%= link_to order.user_name, order_path(order) %></td>
   <td><%= order.time %></td>
   <td>
+    <p>
+      <%= t ".peoples" %>
+      <%= order.people %>
+    </p>
     <%= render partial: "admin/orders/info_order", collection: order.order_items, as: :order_item %>
   </td>
   <td><%= "#{Settings.money_symbol} #{order.order_total_amount}" %></td>
