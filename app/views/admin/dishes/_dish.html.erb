@@ -1,7 +1,8 @@
 <tr>
-  <td><%= dish.name %></td>
+  <td><%= link_to dish.name, edit_admin_dish_path(dish) %></td>
   <td><%= dish.price %></td>
-  <td><%= link_to t(".edit"), edit_admin_dish_path(dish) %></td>
+  <td><%= orders_this_month dish %></td>
+  <td><%= orders_today dish %></td>
   <td><%= link_to t(".delete"), admin_dish_path(dish), method: :delete,
     data: {confirm: t(".confirm")} %></td>
 </tr>

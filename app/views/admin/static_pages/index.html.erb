@@ -1,0 +1,25 @@
+<div class="row grid-responsive">
+  <div class="column ">
+    <div class="card">
+      <div class="card-title">
+        <h3><%= t ".dishes" %></h3>
+      </div>
+      <div class="card-block">
+        <table id="table-dishes">
+          <thead>
+            <tr>
+              <th><%= t ".dish_name" %></th>
+              <th><%= t ".price" %></th>
+              <th id="month"><%= link_to t(".orders_this_month"), "#" %></th>
+              <th id="day"><%= link_to t(".orders_today"), "#" %></th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @dishes %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

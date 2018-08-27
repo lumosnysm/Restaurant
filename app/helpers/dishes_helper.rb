@@ -4,6 +4,16 @@ module DishesHelper
   end
 
   def order_times dish
-    OrderItem.where(dish_id: dish.id).count
+    OrderItem.search_by_dish(dish.id).count
+  end
+
+  def orders_this_month dish
+    OrderItem.search_by_dish(dish.id).
+      search_by_order_ids(Order.search_by_month Time.now.month).count
+  end
+
+  def orders_today dish
+    OrderItem.search_by_dish(dish.id).
+      search_by_order_ids(Order.search_by_day Time.now.day).count
   end
 end
