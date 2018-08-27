@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(version: 2018_08_22_125906) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id"
+    t.bigint "dish_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dish_id", "created_at"], name: "index_comments_on_dish_id_and_created_at"
+    t.index ["dish_id"], name: "index_comments_on_dish_id"
+    t.index ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "dishes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -103,6 +115,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_125906) do
     t.string "image"
   end
 
+  add_foreign_key "comments", "dishes"
+  add_foreign_key "comments", "users"
   add_foreign_key "dishes", "categories"
   add_foreign_key "menu_details", "categories"
   add_foreign_key "menu_details", "dishes"

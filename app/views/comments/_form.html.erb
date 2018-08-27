@@ -1,0 +1,11 @@
+<%=form_for [@dish, @comment], remote: true do |f| %>
+  <div class="row">
+    <div class="col-12">
+      <%= f.text_area :content, class: "form-control" %>
+      <hr class="bg-dark">
+      <button class="btn btn-outline-dark rounded-0"
+        type="submit">
+        <%= t ".submit" %></button>
+    </div>
+  </div>
+<% end %> 

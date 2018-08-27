@@ -220,3 +220,21 @@ en:
       message: "Message"
       order_total_amount: "Order total amount"
       sayhi: "Hi"
+  comments:
+    create:
+      success: "Add comment success"
+      danger: "Add comment not success"
+    destroy:
+      success: "Destroy comment success"
+      danger: "Destroy comment not success"
+    find_comment:
+      danger: "Find  comment not success"
+    find_dish:
+      danger: "Find  Dish not success"
+    dishes:
+      show:
+        cant_comment: "can not comment"
+    comment:
+      delete: "Delete"
+     
+      
