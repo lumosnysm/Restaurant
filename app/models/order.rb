@@ -5,6 +5,8 @@ class Order < ApplicationRecord
   has_many :dishes, through: :order_items
   scope :list_order, ->{where.not status: nil}
   scope :lastest, ->{order updated_at: :desc}
+  scope :search_by_day, ->(day) {where("extract(day from time) = ?", day)}
+  scope :search_by_month, ->(month) {where("extract(month from time) = ?", month)}
   delegate :name, to: :user, prefix: :user, allow_nil: true
 
   def order_total_amount

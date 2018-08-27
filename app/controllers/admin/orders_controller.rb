@@ -1,8 +1,9 @@
 module Admin
   class OrdersController < AdminBaseController
     before_action :load_order, only: :update
+
     def index
-      @orders = Order.list_order
+      @orders = Order.list_order.page(params[:page]).per Settings.per_page
     end
 
     def update
