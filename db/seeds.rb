@@ -112,3 +112,10 @@ end
     quantity: quantity,
     price_each: Dish.find_by(id: dish_id).price
 end
+
+10.times do |n|
+  content = FFaker::Lorem.sentence 10
+  user_id = rand(1..50)
+  Review.create! content: content,
+    user_id: user_id
+end

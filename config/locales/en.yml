@@ -25,6 +25,8 @@ en:
       title_base: "Restaurant"
     admin_nav:
       brand: "Restaurant Admin"
+    admin:
+      title_base: "Admin"
 
   static_pages:
     home:
@@ -190,6 +192,9 @@ en:
       order:
         confirm: "confirm"
         peoples: "Number of people: "
+      update:
+        confirmed: "Confirmed"
+        not_confirmed: "Not confirm"
 
   reservations:
     reservation_form:
@@ -202,6 +207,11 @@ en:
   orders:
     update:
       time_default: "%Y-%m-%d %H:%M:%S"
+      saved: "order saved"
+      not_save: "order not save"
+    create:
+      saved: "order saved"
+      not_save: "order not save"
 
   search:
     index:
@@ -212,8 +222,15 @@ en:
   order_items:
     create:
       reservation: "Reservation"
+      added: "Dish added"
+      not_added: "Dish not added"
     destroy:
+      deleted: "Dish deleted"
+      not_deleted: "Dish not deleted"
       reservation: "Reservation"
+    updated:
+      updated: "Dish updated"
+      not_updated: "Dish not updated"
 
   user_mailer:
     make_reservation:
@@ -239,5 +256,3 @@ en:
         cant_comment: "can not comment"
     comment:
       delete: "Delete"
-
-
