@@ -4,8 +4,12 @@ module Admin
 
     def index
       @orders = Order.list_order.lastest.page(params[:page]).per Settings.per_page
+      respond_to do |format|
+        format.html
+        format.xls { send_data @orders.to_csv(col_sep: "\t") }
+      end
     end
-
+  
     def update
       if @order.update_attributes status: true
         flash[:success] = t ".confirmed"

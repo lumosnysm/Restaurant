@@ -114,6 +114,8 @@ en:
       submit: "Leave a message"
     dishes_in_menu:
       order: "Order"
+    index:
+      download: "Download Excel"
 
   reviews:
     create:
