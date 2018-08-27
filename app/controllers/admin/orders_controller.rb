@@ -3,7 +3,7 @@ module Admin
     before_action :load_order, only: :update
 
     def index
-      @orders = Order.list_order.page(params[:page]).per Settings.per_page
+      @orders = Order.list_order.lastest.page(params[:page]).per Settings.per_page
     end
 
     def update

@@ -189,10 +189,12 @@ en:
     orders:
       order:
         confirm: "confirm"
+        peoples: "Number of people: "
 
   reservations:
     reservation_form:
       message: "Type your message here!"
+      number_people: "Number of people!"
     list:
       update: "Update"
       delete: "Delete"
@@ -237,5 +239,5 @@ en:
         cant_comment: "can not comment"
     comment:
       delete: "Delete"
-     
-      
+
+

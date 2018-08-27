@@ -36,7 +36,8 @@ class OrdersController < ApplicationController
   end
 
   def order_update_params
-    @order.update_attributes time: load_time, message: params[:order][:message], status: false
+    @order.update_attributes time: load_time, message: params[:order][:message], status: false,
+      people: params[:order][:people]
   end
 
   def load_order

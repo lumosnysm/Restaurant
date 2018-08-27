@@ -91,17 +91,19 @@ end
     password_confirmation: "111111"
 end
 
-50.times do |n|
+100.times do |n|
   user_id = rand(1..50)
   message = FFaker::Lorem.sentence 10
   time = FFaker::Time.between 1.months.ago, 1.days.ago
+  people = rand(1..10)
   Order.create! time: time,
     user_id: user_id,
     status: true,
-    message: message
+    message: message,
+    people: people
 end
 
-200.times do |n|
+500.times do |n|
   order_id = rand(1..50)
   dish_id = rand(1..50)
   quantity = rand(1..10)
