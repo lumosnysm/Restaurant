@@ -25,7 +25,10 @@
                 <h6><%= t ".price" %></h6>
                 <p class="font-italic">$<%= @dish.price %></p>
                 <h6><%= t ".be_ordered" %></h6>
-                <p class="font-italic">100 times</p>
+                <p class="font-italic">
+                  <%= order_times @dish %>
+                  <%= t ".times" %>
+                </p>
               </div>
               <div class="col-4">
                 <%= image_tag("dish-1.png", alt: "") %>
@@ -35,8 +38,12 @@
                 </div>
               </div>
             </div>
-            <a href="#" class="btn caviar-btn"><span></span>
-              <%= t ".order" %></a>
+            <%= form_for @order_item, remote: true do |f| %>
+              <%= f.hidden_field :dish_id, value: @dish.id %>
+              <%= f.hidden_field :price_each, value: @dish.price %>
+              <%= f.hidden_field :quantity, value: 1 %>
+              <%= f.submit t(".order"), class: "btn caviar-btn" %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -63,20 +70,20 @@
                     </div>
                 </div>
                 <br>
-                  <div class="comment-list">
-                    <%= render @dish.comments.lastest %>  
-                  </div> 
+                <div class="comment-list">
+                  <%= render @dish.comments.lastest %>
+                </div>
               </div>
-                <div class="col-4">
-                  <%= image_tag("dish-1.png") %>
-                  <div class="comment-count">
-                    <%= render "comments/count" %>
-                  </div>
-                </div>               
+              <div class="col-4">
+                <%= image_tag("dish-1.png") %>
+                <div class="comment-count">
+                  <%= render "comments/count" %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
