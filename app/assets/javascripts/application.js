@@ -5,3 +5,4 @@
 //= require js/others/plugins.js
 //= require js/active.js
 //= require search_dishes
+//= require quantity

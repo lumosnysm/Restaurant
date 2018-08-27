@@ -1,0 +1,10 @@
+$('#order_item_quantity').on('change', function () {
+  var quantity = $(this).val();
+  var csrf = $('input[name=authenticity_token]').val();
+  var url = $('.btn-sm').attr('href');
+  $.ajax({
+    method: 'PATCH',
+    url: url,
+    data: { 'order_item': {'quantity': quantity}, 'authenticity_token': csrf }
+  });
+});
