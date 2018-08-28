@@ -1,6 +1,7 @@
 module Admin
   class DishesController < AdminBaseController
     before_action :load_dish, except: :create
+    before_action :destroyable, only: :destroy
 
     def edit; end
 
@@ -43,6 +44,13 @@ module Admin
       @dish = Dish.find_by id: params[:id]
       return if @dish
       flash[:danger] = t ".not_found"
+      redirect_to admin_url
+    end
+
+    def destroyable
+      return unless Dish.search_by_ids(OrderItem.search_by_order_ids(Order.not_confirm).select(:dish_id)).
+        include? @dish
+      flash[:danger] = t ".cant_delete"
       redirect_to admin_url
     end
   end

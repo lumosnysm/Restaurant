@@ -8,6 +8,7 @@ class Dish < ApplicationRecord
   scope :lastest, ->{order updated_at: :desc}
   scope :not_pick, ->(dish_ids) {where.not id: dish_ids}
   scope :search_by_name, ->(name) {where "name LIKE ?", "%#{name}%"}
+  scope :search_by_ids, ->(ids) {where id: ids}
   mount_uploader :image, ImageUploader
   validates :name, presence: true
   validates :description, presence: true
