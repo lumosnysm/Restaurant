@@ -167,6 +167,8 @@ en:
     dishes:
       edit:
         submit: "Update dish"
+      dish:
+        confirm: "You sure?"
     menus:
       index:
         submit: "Add menu"

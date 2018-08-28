@@ -7,12 +7,13 @@ class Order < ApplicationRecord
   scope :lastest, ->{order updated_at: :desc}
   scope :search_by_day, ->(day) {where("extract(day from time) = ?", day)}
   scope :search_by_month, ->(month) {where("extract(month from time) = ?", month)}
+  scope :not_confirm, ->{where status: false}
   delegate :name, to: :user, prefix: :user, allow_nil: true
 
   def order_total_amount
     order_items.collect{|i| i.quantity * i.price_each}.sum
   end
-  
+
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
