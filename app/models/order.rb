@@ -12,4 +12,13 @@ class Order < ApplicationRecord
   def order_total_amount
     order_items.collect{|i| i.quantity * i.price_each}.sum
   end
+  
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |order|
+        csv << order.attributes.values_at(*column_names)
+      end
+    end
+  end
 end
