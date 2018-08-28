@@ -1,6 +1,7 @@
 module Admin
   class CategoriesController < AdminBaseController
     before_action :load_category, except: %i(index create)
+    before_action :check_destroy, only:  :destroy
 
     def index
       @category = Category.new
@@ -33,6 +34,15 @@ module Admin
       redirect_back fallback_location: admin_categories_url
     end
 
+    def destroy
+      if @category.destroy
+        flash[:success] = t ".updated"
+      else
+        flash[:danger] = t ".not_update"
+      end
+      redirect_back fallback_location: admin_categories_url
+    end
+
     private
 
     def category_params
@@ -44,6 +54,12 @@ module Admin
       @category = Category.find_by id: params[:id]
       return if @category
       flash[:danger] = t ".not_found"
+      redirect_to admin_categories_url
+    end
+
+    def check_destroy
+      return if @category.dishes.count == 0
+      flash[:danger] = t ".not_delete"
       redirect_to admin_categories_url
     end
   end
