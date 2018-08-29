@@ -1,8 +1,8 @@
 class Category < ApplicationRecord
-  has_many :dishes
+  has_many :dishes, dependent: :destroy
   accepts_nested_attributes_for :dishes, allow_destroy: true
   has_many :category_picked, class_name: MenuDetail.name,
-    foreign_key: :category_id
+    foreign_key: :category_id, dependent: :destroy
   has_many :menus, through: :category_picked, source: :menu
   scope :lastest, ->{order updated_at: :desc}
   validates :name, presence: true
