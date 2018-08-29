@@ -8,6 +8,7 @@ class Order < ApplicationRecord
   scope :search_by_day, ->(day) {where("extract(day from time) = ?", day)}
   scope :search_by_month, ->(month) {where("extract(month from time) = ?", month)}
   scope :not_confirm, ->{where status: false}
+  scope :confirmed, ->{where status: true}
   delegate :name, to: :user, prefix: :user, allow_nil: true
 
   def order_total_amount

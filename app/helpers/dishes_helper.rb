@@ -4,7 +4,7 @@ module DishesHelper
   end
 
   def order_times dish
-    OrderItem.search_by_dish(dish.id).count
+    OrderItem.search_by_dish(dish.id).search_by_order_ids(Order.confirmed.ids).count
   end
 
   def orders_this_month dish
